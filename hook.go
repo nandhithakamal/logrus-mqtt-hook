@@ -1,9 +1,9 @@
-package main
+package logrus_mqtt_hook
 
 import (
+	paho "github.com/eclipse/paho.mqtt.golang"
 	log "github.com/sirupsen/logrus"
 	"time"
-	paho "github.com/eclipse/paho.mqtt.golang"
 )
 
 
