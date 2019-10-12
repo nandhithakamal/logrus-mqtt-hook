@@ -1,4 +1,4 @@
-module logrus-mqtt-hook
+module logrus_mqtt_hook
 
 go 1.12
 
