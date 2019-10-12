@@ -20,14 +20,10 @@ type MqttHook struct {
 const TimeoutInterval = time.Minute
 
 func NewMqttHook(topic string, mqttClient paho.Client, levels []log.Level, logFormatter log.Formatter) *MqttHook {
-	//log.Info("Creating new mqtt hook...")
 	if logFormatter == nil {
-		//log.Info("logformatter is nil")
 		logFormatter = &log.JSONFormatter{}
 	}
-	//log.Info("Creating mqtt client...")
 	mqttClient = mqttClient
-	//log.Info("Created...")
 	return &MqttHook{
 		client:    mqttClient,
 		topic:     topic,
@@ -40,7 +36,6 @@ func NewMqttHook(topic string, mqttClient paho.Client, levels []log.Level, logFo
 
 
 func (h *MqttHook) Fire(entry *log.Entry) error {
-	//log.Info("Firing...")
 	logEntry, err := h.Formatter.Format(entry)
 	if err != nil {
 		return err
@@ -56,6 +51,5 @@ func (h *MqttHook) Fire(entry *log.Entry) error {
 }
 
 func (h *MqttHook) Levels() []log.Level {
-	//log.Info("Finding levels...")
 	return h.levels
 }
