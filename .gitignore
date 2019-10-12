@@ -1,0 +1,4 @@
+*.exe
+*.exe~
+logrus-mqtt-hook
+.idea/
